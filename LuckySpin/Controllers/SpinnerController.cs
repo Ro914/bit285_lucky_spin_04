@@ -20,7 +20,7 @@ namespace LuckySpin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(int num)
+        public IActionResult Index(Player p)
         {
             return RedirectToAction("SpinIt", new { luck = 3 });
         }
@@ -33,6 +33,7 @@ namespace LuckySpin.Controllers
 
         public IActionResult SpinIt(int luck)
         {
+
             //Load up a Spin object with data
             Spin spin = new Spin();
             spin.Luck = luck;
